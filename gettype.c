@@ -1,27 +1,27 @@
-#include "3-calc.h"
+#include "holberton.h"
 
 /**
- * get_op_func - selects the correct function to perform
- * @s: the operator passed as an argument to the program
- * Return: a pointer to the function that corresponds to the operator given as
+ * get_type - selects the correct function to perform
+ * @s: the type passed as an argument to the program
+ * Return: a pointer to the function that corresponds to the type given as
  * a parameter
  */
-int (*get_op_func(char *s))(int, int)
+int (*get_type(char *s))(int, int)
 {
-        op_t ops[] = {
-                {"+", op_add},
-                {"-", op_sub},
-                {"*", op_mul},
-                {"/", op_div},
-                {"%", op_mod},
+         tprint type [] = {
+                {"c", print_c},
+                {"s", print_s},
+                {"%", print_p},
+                {"d", print_d},
+                {"i", print_i},
                 {NULL, NULL}
         };
         int i = 0;
 
-        while (ops[i].op) /* while ops[i] contains a valid character */
+        while (type[i].print) /* while ops[i] contains a valid character */
         {
-                if (*ops[i].op == *s && s[1] == '\0') /* op the user inputs */
-                        return (ops[i].f); /* returns the op function */
+                if (*type[i].print == *s && s[1] == '\0') /* op the user inputs */
+                        return (type[i].print); /* returns the op function */
                 i++;
         }
         return (NULL);
