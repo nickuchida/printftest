@@ -8,7 +8,7 @@
 typedef struct newprint
 {
 	char * print;
-	int (*fp)(int args, ...);
+	int (*fp)(va_list, ...);
 } tprint;
 
 int _printf(const char *format, ...);
