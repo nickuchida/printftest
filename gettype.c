@@ -6,23 +6,29 @@
  * Return: a pointer to the function that corresponds to the type given as
  * a parameter
  */
-int (*get_type(char *s))(int, int)
+int (*get_type(char *s))(char, char)
 {
-         tprint type [] = {
-                {"c", print_c},
-                {"s", print_s},
-                {"%", print_p},
-                {"d", print_d},
-                {"i", print_i},
-                {NULL, NULL}
-        };
-        int i = 0;
+	tprint type[] = {
+		{"c", print_c},
+		{"s", print_s},
+		{"%", print_p},
+		{"d", print_d},
+		{"i", print_i},
+		{NULL, NULL}
+	};
+	int i = 0;
 
-        while (type[i].print) /* while ops[i] contains a valid character */
-        {
-                if (*type[i].print == *s && s[1] == '\0') /* op the user inputs */
-                        return (type[i].print); /* returns the op function */
-                i++;
-        }
-        return (NULL);
+	while (type[i].print) /* while type[i] contains a valid specifier */
+	{
+		if (*type[i].print == *s) /* specifier the user inputs */
+		{
+			if (*s + 1 == 'c' || *s + 1 == 's' || *s + 1 == 'd' |
+			    *s + 1 == 'i')
+/* if following character is a specifier return the function */
+				return (type[i].print);
+/* return the valid function */
+		}
+		i++;
+	}
+	return (NULL);
 }
