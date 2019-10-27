@@ -22,7 +22,7 @@ int (*get_type(char *s))(char, char)
 	{
 		if (*type[i].print == *s) /* specifier the user inputs */
 		{
-			if (*s + 1 == 'c' || *s + 1 == 's' || *s + 1 == 'd' |
+			if (*s + 1 == 'c' || *s + 1 == 's' || *s + 1 == 'd' ||
 			    *s + 1 == 'i')
 /* if following character is a specifier return the function */
 				return (type[i].print);
