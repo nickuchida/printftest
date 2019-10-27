@@ -14,22 +14,24 @@ int _printf(const char *format, ...)
 
 	while (format[i])
 	{
+		if (format[i] == '%')
+			get_type(format[i + 1]);
 		switch (format[i])
 		{
 		case 'c':
 			print_c(va_arg(ap, int));
+			break;
 		case 's':
 			print_s(va_arg(ap, char *));
-		case '%':
-			print_p
-				find the next character after %;
-			get type with next character
+			break;
 		case 'd':
 			print_d(va_arg(ap, int));
+			break;
 		case 'i':
 			print_i(va_arg(ap, int));
-		default:
 			break;
+		default:
+			continue;
 		}
 		i++;
 	}

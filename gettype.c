@@ -11,7 +11,6 @@ int (*get_type(char *s))(char, char)
 	tprint type[] = {
 		{"c", print_c},
 		{"s", print_s},
-		{"%", print_p},
 		{"d", print_d},
 		{"i", print_i},
 		{NULL, NULL}
@@ -22,10 +21,10 @@ int (*get_type(char *s))(char, char)
 	{
 		if (*type[i].print == *s) /* specifier the user inputs */
 		{
-			if (*s + 1 == 'c' || *s + 1 == 's' || *s + 1 == 'd' ||
-			    *s + 1 == 'i')
+			if (*s == 'c' || *s == 's' || *s == 'd' ||
+			    *s == 'i')
 /* if following character is a specifier return the function */
-				return (type[i].print);
+				return (type[i].fp);
 /* return the valid function */
 		}
 		i++;
