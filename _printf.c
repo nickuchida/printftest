@@ -35,7 +35,7 @@ get type
 		}
 		i++;
 	}
-	_putchar('\n');
+	print_c('\n');
 	va_end(ap);
 // Return statement
 }
