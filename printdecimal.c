@@ -13,5 +13,5 @@ int print_d(int n)
                 print_i(n / 10);
         print_c(n % 10 + '0');
 
-	return (1);
+	return (n);
 }
