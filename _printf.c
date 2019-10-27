@@ -7,10 +7,6 @@ int _printf(const char *format, ...)
 	va_list ap;
 	int i;
 
-/**
-get type
-*/
-
 	while (format == NULL)
 		return;
 
@@ -29,7 +25,9 @@ get type
 				find the next character after %;
 			get type with next character
 		case 'd':
+			print_d(va_arg(ap, int));
 		case 'i':
+			print_i(va_arg(ap, int));
 		default:
 			break;
 		}
@@ -37,5 +35,5 @@ get type
 	}
 	print_c('\n');
 	va_end(ap);
-// Return statement
+
 }
