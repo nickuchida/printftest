@@ -5,7 +5,7 @@
  * @s: string to be printed
  * Return: void
  */
-void print_s(char *s)
+int print_s(char *s)
 {
 	int i;
 
@@ -14,4 +14,5 @@ void print_s(char *s)
 		print_c(s[i]);
 	}
 	print_c('\n');
+	return (i);
 }
