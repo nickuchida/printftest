@@ -7,6 +7,10 @@ int _printf(const char *format, ...)
 	va_list ap;
 	int i;
 
+/**
+get type
+*/
+
 	while (format == NULL)
 		return;
 
@@ -17,11 +21,13 @@ int _printf(const char *format, ...)
 		switch (format[i])
 		{
 		case 'c':
-			printchar(va_arg(ap, int));
+			print_c(va_arg(ap, int));
 		case 's':
-			printstring(va_arg(ap, char *));
+			print_s(va_arg(ap, char *));
 		case '%':
-			printpercent
+			print_p
+				find the next character after %;
+			get type with next character
 		case 'd':
 		case 'i':
 		default:
