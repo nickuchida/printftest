@@ -13,4 +13,14 @@ typedef struct newprint
 
 int _printf(const char *format, ...);
 
+int print_c(char c);
+
+void print_s(char *s);
+
+void print_i(int n);
+
+void print_d(int n);
+
+int (*get_type(char *s))(char, char);
+
 #endif /* HOLBERTON_H */
