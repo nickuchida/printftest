@@ -6,7 +6,7 @@
  * @c: character to be printed
  * Return: character
  */
-int print_c(int c)
+int print_c(char c)
 {
 	return (write(1, &c, 1));
 }
