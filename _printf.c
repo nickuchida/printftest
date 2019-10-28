@@ -36,7 +36,9 @@ int _printf(const char *format, ...)
 				i++;
 				break;
 			case '%':
-				result += print_p(va_arg(ap, int));
+				print_c(va_arg(ap, int));
+				result++;
+				i++;
 			case 'd':
 				result += print_d(va_arg(ap, int));
 				i++;
