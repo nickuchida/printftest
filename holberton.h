@@ -1,8 +1,6 @@
 #ifndef HOLBERTON_H
 #define HOLBERTON_H
 
-/* test config */
-
 #include <stdio.h>
 #include <stdlib.h>
 #include <stdarg.h>
@@ -17,4 +15,6 @@ int print_i(int n);
 
 int print_d(int n);
 
-#endif /* HOLBERTON_H */
+int print_p(int n);
+
+#endif

@@ -20,6 +20,7 @@ int _printf(const char *format, ...)
 		if (format[i] != '%')
 		{
 			print_c(format[i]);
+			result++;
 		}
 		if (format != NULL && format[i] == '%')
 		{
@@ -34,6 +35,8 @@ int _printf(const char *format, ...)
 				result += print_s(va_arg(ap, char *));
 				i++;
 				break;
+			case '%':
+				result += print_p(va_arg(ap, int));
 			case 'd':
 				result += print_d(va_arg(ap, int));
 				i++;
