@@ -2,6 +2,11 @@
 #include <stdio.h>
 #include <stdlib.h>
 
+/**
+ * _printf - prints data and information
+ * @format: the data to be printed
+ * Return: returns the number of characters printed
+ */
 int _printf(const char *format, ...)
 {
 	va_list ap;
