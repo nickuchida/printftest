@@ -15,6 +15,6 @@ int print_i(int n);
 
 int print_d(int n);
 
-int print_p(int n);
+int print_p(void);
 
 #endif
