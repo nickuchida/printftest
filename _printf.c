@@ -8,37 +8,39 @@ int _printf(const char *format, ...)
 	int i = 0;
 	int result = 0;
 
-	while (format == NULL)
-		return;
-
 	va_start(ap, format);
 
 	while (format[i])
 	{
-		if (format[i] == '%')
+		if (format[i] != '%')
+		{
+			print_c(format[i]);
+		}
+		if (format != NULL && format[i] == '%')
 		{
 			switch (format[i + 1])
 			{
 			case 'c':
 				print_c(va_arg(ap, int));
 				result++;
+				i++;
 				break;
 			case 's':
 				result += print_s(va_arg(ap, char *));
+				i++;
 				break;
 			case 'd':
-				print_d(va_arg(ap, int));
+				result += print_d(va_arg(ap, int));
+				i++;
 				break;
 			case 'i':
-				print_i(va_arg(ap, int));
+				result += print_i(va_arg(ap, int));
+				i++;
 				break;
-			default:
-				continue;
 			}
 		}
 		i++;
 	}
-	print_c('\n');
 	va_end(ap);
 	return (result);
 }
